@@ -1,18 +1,19 @@
 {
 	"name": "kkcountdown",
 	"title": "KK Countdown",
-	"description": "Plugin KK Countdown counts down to specific dates in the future.",
-	"keywords": [
-			"countdown",
-			"time",
-			"count",
-			"down"
-		],
 	"version": "1.3",
+	"description": "Plugin KK Countdown counts down to specific dates in the future.",
+	"keywords": ["countdown", "time", "count", "down"],
 	"author": {
 			"name": "Krzysztof Furtak",
 			"url": "http://krzysztof-furtak.pl/"
 		},
+	"maintainers": [
+			{
+				"name": "Krzysztof Furtak",
+				"email": "krzysztof.furtak@gmail.com"
+			}
+		],
 	"licenses": [
 			{
 				"type": "MIT",
@@ -24,6 +25,6 @@
 	"docs": "http://krzysztof-furtak.pl/2010/05/kk-countdown-jquery-plugin/",
 	"download": "https://github.com/KrzysiekF/kkcountdown",
 	"dependencies": {
-			"jquery": ">=1.5"
+			"jquery": ">=1.4"
 		}
 }
