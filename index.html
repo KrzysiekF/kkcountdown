@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
     <head>
         <title>JQuery Plugins - KK Countdown</title>
@@ -6,67 +6,7 @@
         <script src="lib/jquery.js" type="text/javascript"></script>
         <script src="js/kkcountdown.js" type="text/javascript"></script>
 
-        <style type="text/css">
-
-            body{
-                font-size: 12px;
-                text-align: center;
-                margin: auto;
-                font-family: Verdana, sans-serif;
-                color: #333;
-            }
-
-            #content{
-                width: 800px;
-                text-align: center;
-                margin: auto;
-            }
-
-            #top{
-                text-align: left;
-                border-bottom: 1px #ccc solid;
-                margin-bottom: 30px;
-                padding-bottom: 10px;
-            }
-
-            #odliczanie-a{
-                font-size: 60px;
-                font-family: Verdana, sans-serif;
-            }
-
-            #tytul-a{
-                text-align: right;
-            }
-
-            #odliczanie-b{
-                font-size: 18px;
-                font-weight: normal;
-                margin: 40px 0px;
-            }
-
-            #footer{
-                border-top: 1px #ccc solid;
-                color: #333;
-                padding-top: 10px;
-                text-align: left;
-                font-size: 11px;
-            }
-
-            a{
-                text-decoration: none;
-                font-weight: bold;
-                color: blue;
-            }
-
-            .shadow{
-                text-shadow: 1px 1px 1px #333;
-            }
-            
-            .one-day{
-            	color: red;
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
 
         <script type="text/javascript">
             $(document).ready(function(){
@@ -81,14 +21,14 @@
                     oneDayClass	: 'one-day'
                 });
                 $(".kkcount-down").kkcountdown({
-                	dayText		: 'd ',
-                	daysText 	: 'd ',
+                	dayText		: ' ',
+                	daysText 	: ' ',
                     hoursText	: ':',
                     minutesText	: ':',
                     secondsText	: '',
                     displayZeroDays : false,
                     callback	: test,
-                    addClass	: 'shadow'
+                    addClass	: ''
                 });
             });
             function test(){
@@ -105,7 +45,7 @@
                 <b>www:</b> <a href="http://krzysztof-furtak.pl">http://krzysztof-furtak.pl</a>
             </div>
             <div id="tytul-a">
-                <span style="margin-right: 170px;">To 11.02.2014 20:00:00</span>
+                <span>To 11.02.2014 20:00:00</span>
             </div>
             <div id="odliczanie-a">
                 <span time="1392145200" class="kkcount-down"></span>
