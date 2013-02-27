@@ -28,11 +28,16 @@
                 displayDays		: 	true,
                 displayZeroDays	:	true,
                 addClass		: 	false,
-                callback		: 	false
+                callback		: 	false,
+                warnSeconds		:	60,
+                warnClass		:	false
             };
                  
             var options =  $.extend(defaults, options);
- 
+            
+            // rather than continue to read the timestamp/seconds from the dom element, store it within the plugin
+            var countdowns = new Array();
+
             this.each(function(){
             	var _this = $(this);
             	
@@ -62,12 +67,31 @@
             });
             
             function kkCountdownInit(_this){
-            	var now = new Date();
-		        now = Math.floor(now.getTime() / 1000);
-		        var event = _this.attr('time');
-		        var count = event - now;
+            	/*
+            	 * look first for the number of seconds and not a time attribute on the object
+            	 * - time relies on the browser's time being set in sync with the server
+            	 * - number of seconds can be confidently set based on the server time
+            	 */
+            	var count = 0;
+            	if (_this.id === undefined) {
+	            	_this.id = 'kk_'+ Math.random( new Date().getTime() );
+            	}
+            	if (_this.id in countdowns) count = countdowns[_this.id];
+            	else count = _this.attr('data-seconds');
+            	
+            	if (count === undefined) {
+	            	var now = new Date();
+	            	now = Math.floor(now.getTime() / 1000);
+	            	var	event = _this.attr('data-time'); 
+	            	if (event === undefined) event = _this.attr('time'); // backward-compatibility
+	            	count = event - now;
+		        }
+		        countdowns[_this.id] = count-1;
 		        
-		        if(count <= 0){
+		        if (options.warnClass && count < options.warnSeconds) {
+			        _this.addClass(options.warnClass)
+		        }
+		        if(count < 0){
 		            _this.html(options.textAfterCount);
 		            if(options.callback){
 		            	options.callback();
