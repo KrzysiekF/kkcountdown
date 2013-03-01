@@ -108,6 +108,14 @@ body{
     margin: 40px 0px;
 }
 
+#odliczanie-c{
+    font-size: 20px;
+    font-weight: normal;
+    margin: 40px 0px;
+    border: thin solid #333;
+}
+
+
 #footer{
     border-top: 1px #000 solid;
     color: #333;
@@ -126,6 +134,6 @@ a{
     text-shadow: 1px 1px 1px #333;
 }
 
-.one-day{
+.one-day, .red {
 	color: red;
 }
