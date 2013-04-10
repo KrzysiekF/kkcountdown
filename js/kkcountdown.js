@@ -94,7 +94,7 @@
 		        if(count < 0){
 		            _this.html(options.textAfterCount);
 		            if(options.callback){
-		            	options.callback();
+		            	options.callback(_this);
 		            }
 		        }else if(count <= 24*60*60){
 		        	setTimeout(function(){
