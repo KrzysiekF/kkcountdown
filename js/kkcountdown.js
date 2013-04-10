@@ -39,6 +39,7 @@
             var options =  $.extend(defaults, options);
 
             // rather than continue to read the timestamp/seconds from the dom element, store it within the plugin
+            
             var countdowns = new Array();
 
             this.each(function(){
