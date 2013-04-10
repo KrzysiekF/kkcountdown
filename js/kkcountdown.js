@@ -8,7 +8,7 @@
  *
  * @name kkcountdown
  * @author Krzysztof Furtak http://krzysztof-furtak.pl/
- * @version 1.4
+ * @version 1.3.8
  *
  * Documentation: http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/
  *
@@ -39,7 +39,6 @@
             var options =  $.extend(defaults, options);
 
             // rather than continue to read the timestamp/seconds from the dom element, store it within the plugin
-            
             var countdowns = new Array();
 
             this.each(function(){
