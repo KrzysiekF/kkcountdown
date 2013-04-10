@@ -11,7 +11,7 @@ if ( typeof Object.create !== 'function' ) {
 	var Countdown = {
 		init: function( options , obj ){
 			var _this = this;
-			
+			console.log('OK');
 		}
 	};
 
