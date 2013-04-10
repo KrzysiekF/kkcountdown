@@ -162,19 +162,19 @@
                     }
                 }
             } else {
-                if (1== number) {
+                if (1 == number) {
                     daysText = options[optionText+'Text'];
                 }
             }
             return daysText;
         }
 
-            function naprawaCzasu(obj){
-			    s = '';
-			    if(obj < 10){
-			        obj = '0' + obj;
-			    }
-			    return obj;
-			}
+        function naprawaCzasu(obj){
+		    s = '';
+		    if(obj < 10){
+		        obj = '0' + obj;
+		    }
+		    return obj;
+		}
       }
 })(jQuery);
