@@ -7,8 +7,8 @@ module.exports = function(grunt) {
 
     uglify: {
       build: {
-        src: 'kkcountdown/build/kkcountdown.js',
-        dest: 'kkcountdown/build/kkcountdown.min.js'
+        src: 'kkcountdown/js/build/kkcountdown.js',
+        dest: 'kkcountdown/js/build/kkcountdown.min.js'
       }
     },
 
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
     coffee: {
       compile: {
         files: {
-          'kkcountdown/build/kkcountdown.js': 'kkcountdown/kkcountdown.coffee'
+          'kkcountdown/js/build/kkcountdown.js': 'kkcountdown/js/kkcountdown.coffee'
         }
       }
     },
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         tasks: ['css']
       },
       scripts: {
-        files: ['kkcountdown/kkcountdown.coffee'],
+        files: ['kkcountdown/js/kkcountdown.coffee'],
         tasks: ['js']
       }
     }
