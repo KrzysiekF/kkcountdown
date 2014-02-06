@@ -1,14 +1,40 @@
 (function() {
-  var xxx, xxx2, xxx3, xxx4, xxx5;
+  (function($, window) {
+    var KKCountdown;
+    KKCountdown = (function() {
+      KKCountdown.prototype.defaults = {
+        paramA: 'foo',
+        paramB: 'bar'
+      };
 
-  xxx = 'sss';
+      function KKCountdown(el, options) {
+        this.options = $.extend({}, this.defaults, options);
+        this.$el = $(el);
+        this.myMethod('ccc');
+      }
 
-  xxx2 = 'asdas';
+      KKCountdown.prototype.myMethod = function(echo) {
+        return this.$el.html(this.options.paramA + ': ' + echo);
+      };
 
-  xxx3 = 'ala';
+      return KKCountdown;
 
-  xxx4 = 'asd';
-
-  xxx5 = 'sdsdsd';
+    })();
+    return $.fn.extend({
+      kkcountdown: function(option) {
+        return this.each(function() {
+          var $this, data;
+          $this = $(this);
+          data = $this.data('kkcountdown');
+          if (!data) {
+            $this.data('kkcountdown', (data = new KKCountdown(this, option)));
+          }
+          if (typeof option === 'string') {
+            return data[option].apply(data, args);
+          }
+        });
+      }
+    });
+  })(window.jQuery, window);
 
 }).call(this);
