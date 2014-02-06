@@ -1,0 +1,5 @@
+xxx='sss'
+xxx2='asdas' 
+xxx3 = 'ala'
+xxx4 = 'asd'
+xxx5 = 'sdsdsd'
