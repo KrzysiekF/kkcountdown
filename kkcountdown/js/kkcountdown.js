@@ -125,15 +125,15 @@
 		            obj.addClass(options.oneDayClass);
 				}
 
-            if (dni == 0 && !options.displayZeroDays) {
+                if (dni == 0 && !options.displayZeroDays) {
 
-            } else {
+                } else {
 					obj.find('.kkc-dni').html(dni);
-                obj.find('.kkc-dni-text').html(formatNumberedText(dni, 'day'));
-	            }
+                    obj.find('.kkc-dni-text').html(formatNumberedText(dni, 'day'));
+                }
 
 	            obj.find('.kkc-godz').html(godziny);
-            obj.find('.kkc-godz-text').html(formatNumberedText(godziny, 'hour'));
+                obj.find('.kkc-godz-text').html(formatNumberedText(godziny, 'hour'));
 
 	            obj.find('.kkc-min').html(minuty);
 	            obj.find('.kkc-sec').html(sekundy);

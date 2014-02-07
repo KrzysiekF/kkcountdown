@@ -11,28 +11,32 @@
 
         <script type="text/javascript">
             $(document).ready(function(){
+
                 $(".kkcount-down-1").kkcountdown({
                 	dayText		: 'day ',
                 	daysText 	: 'days ',
                     hoursText	: 'h ',
                     minutesText	: 'm ',
                     secondsText	: 's',
-                    displayZeroDays : false,
+                    displayZeroDays : true,
                     callback	: test,
-                    oneDayClass	: 'one-day'
+                    oneDayClass	: 'one-day',
+                    rusNumbers  :   false
                 });
+
                 $(".kkcount-down").kkcountdown({
                 	dayText		: ' ',
                 	daysText 	: ' ',
                     hoursText	: ':',
                     minutesText	: ':',
                     secondsText	: '',
-                    displayZeroDays : false,
+                    displayZeroDays : true,
                     callback	: function() {
                     	$("odliczanie-a").css({'background-color':'#fff',color:'#333'});
                     },
                     addClass	: ''
                 });
+
                 $("#go").click(function() {
                 	var secs = $("#secs").val();
                 	$("#secs").parent("span").html("<strong>"+secs+"</strong>").addClass('red');
@@ -45,13 +49,15 @@
 	                    hoursText	: ':',
 	                    minutesText	: ':',
 	                    secondsText	: '',
-	                    displayZeroDays : false,
+	                    displayZeroDays : true,
 	                    textAfterCount: 'BOOM!',
 	                    warnSeconds : 10,
 	                    warnClass   : 'red',
 	                });
                 });
+
             });
+
             function test(){
             	console.log('KONIEC');
             }
