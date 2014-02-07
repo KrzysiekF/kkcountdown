@@ -12,7 +12,7 @@
         <script type="text/javascript">
             $(document).ready(function(){
 
-                $(".kkcount-down-1").kkcountdown({
+                $(".kkcountdown-1").kkcountdown({
                 	dayText		: 'day ',
                 	daysText 	: 'days ',
                     hoursText	: 'h ',
@@ -24,24 +24,14 @@
                     rusNumbers  :   false
                 });
 
-                $(".kkcount-down").kkcountdown({
-                	dayText		: ' ',
-                	daysText 	: ' ',
-                    hoursText	: ':',
-                    minutesText	: ':',
-                    secondsText	: '',
-                    displayZeroDays : true,
-                    callback	: function() {
-                    	$("odliczanie-a").css({'background-color':'#fff',color:'#333'});
-                    },
-                    addClass	: ''
-                });
-
-                $("#go").click(function() {
+                $("#go").on('click', function() {
                 	var secs = $("#secs").val();
-                	$("#secs").parent("span").html("<strong>"+secs+"</strong>").addClass('red');
+
+                	$("#secs").parent("span").html("<strong>"+secs+"</strong>");
+
                 	$("#go").hide();
-	                $(".kkcount-down-2")
+
+	                $(".kkcountdown-2")
 	                	.attr('data-seconds', secs)
 	                	.kkcountdown({
 	                	dayText		: 'd ',
@@ -53,6 +43,7 @@
 	                    textAfterCount: 'BOOM!',
 	                    warnSeconds : 10,
 	                    warnClass   : 'red',
+                        callback : test
 	                });
                 });
 
@@ -65,23 +56,40 @@
 
     </head>
     <body>
-        <div id="content">
-            <div id="top">
+        <header>
+            <div class="box">
+                <img src="assets/img/kf-logo.png" alt="Krzysztof Furtak">
+                <a href="http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/">Back to plugin website</a>
+            </div>
+        </header>
+
+        <section>
+            <div class="box">
                 <h2>KK Countdown :: jQuery plugin :: DEMO</h2>
-                <b>author: Krzysztof Furtak</b><br />
-                <b>www:</b> <a href="http://krzysztof-furtak.pl">http://krzysztof-furtak.pl</a>
+                
+                <div class="big-countdown">
+                    <h3>To 11.02.2014 20:00:00</h3>
+                    <div>
+                        <span data-time="1392145200" class="kkcountdown-1"></span>
+                    </div>
+                </div>
+
+                <div class="countdown">
+                    Start a timer for 
+                    <span>
+                        <input type="text" name="secs" id="secs" value="60" style="width:3em;" />
+                    </span> 
+                    seconds from now: 
+                    <button id="go">Go go go!</button>
+                    <span data-seconds="60" class="kkcountdown-2"></span>
+                </div>
             </div>
-            <div id="tytul-a">
-                <span>To 11.02.2014 20:00:00</span>
+        </section>
+
+        <footer>
+            <div class="box">
+                Krzysztof Furtak &copy; copyright 2011 - 2014
             </div>
-            <div id="odliczanie-a">
-                <span data-time="1392145200" class="kkcount-down"></span>
-            </div>
-            <div id="odliczanie-b">To 01.01.2015 00:00 - <b><span data-time="1420066800" class="kkcount-down-1"></span></b></div>
-            <div id="odliczanie-c">Start a timer for <span><input type="text" name="secs" id="secs" value="60" style="width:3em;" /></span> seconds from now: <button id="go">Go</button><b><span data-seconds="60" class="kkcount-down-2"></span></b></div>
-            <div id="footer">
-                Krzysztof Furtak &copy; copyright 2013
-            </div>
-        </div>
+        </footer>
     </body>
 </html>

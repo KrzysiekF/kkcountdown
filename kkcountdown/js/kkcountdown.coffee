@@ -77,7 +77,7 @@ class KKCountdown
     #Jesli nie istnieje ID obiektu to tworzymy losowe ID
     obj.id = 'kk_'+ Math.random( new Date().getTime() ) if obj.id == undefined
 
-    if obj.id in _this.countdowns
+    if _this.countdowns[obj.id] or _this.countdowns[obj.id] == 0
       count = _this.countdowns[obj.id]
     else
       count = obj.data('seconds')
@@ -97,7 +97,7 @@ class KKCountdown
 
     obj.addClass(_this.opts.warnClass) if _this.opts.warnClass and count < _this.opts.warnSeconds
 
-    if count < 0
+    if count <= 0
 
       obj.html(_this.opts.textAfterCount)
       _this.opts.callback.call(obj) if _this.opts.callback

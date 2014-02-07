@@ -1,6 +1,5 @@
 (function() {
-  var KKCountdown,
-    __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i < l; i++) { if (i in this && this[i] === item) return i; } return -1; };
+  var KKCountdown;
 
   KKCountdown = (function() {
     KKCountdown.prototype.defaults = {
@@ -54,13 +53,13 @@
     };
 
     KKCountdown.prototype.countdownInit = function(obj) {
-      var count, event, now, _ref, _this;
+      var count, event, now, _this;
       count = 0;
       _this = this;
       if (obj.id === void 0) {
         obj.id = 'kk_' + Math.random(new Date().getTime());
       }
-      if (_ref = obj.id, __indexOf.call(_this.countdowns, _ref) >= 0) {
+      if (_this.countdowns[obj.id] || _this.countdowns[obj.id] === 0) {
         count = _this.countdowns[obj.id];
       } else {
         count = obj.data('seconds');
@@ -78,7 +77,7 @@
       if (_this.opts.warnClass && count < _this.opts.warnSeconds) {
         obj.addClass(_this.opts.warnClass);
       }
-      if (count < 0) {
+      if (count <= 0) {
         obj.html(_this.opts.textAfterCount);
         if (_this.opts.callback) {
           return _this.opts.callback.call(obj);
