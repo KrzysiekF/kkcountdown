@@ -1,7 +1,7 @@
 {
 	"name": "kkcountdown",
 	"title": "KK Countdown",
-	"version": "1.3.8",
+	"version": "1.4",
 	"description": "Plugin KK Countdown counts down to specific dates in the future.",
 	"keywords": ["countdown", "time", "count", "down"],
 	"author": {
@@ -21,8 +21,8 @@
 			}
 		],
 	"bugs": "https://github.com/KrzysiekF/kkcountdown/issues",
-	"homepage": "http://krzysztof-furtak.pl/2010/05/kk-countdown-jquery-plugin/",
-	"docs": "http://krzysztof-furtak.pl/2010/05/kk-countdown-jquery-plugin/",
+	"homepage": "http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/",
+	"docs": "http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/",
 	"download": "https://github.com/KrzysiekF/kkcountdown",
 	"dependencies": {
 			"jquery": ">=1.4"
