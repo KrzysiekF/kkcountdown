@@ -31,6 +31,11 @@ module.exports = function(grunt) {
       }
     },
 
+    qunit: {
+      // all: ['test/**/*.html']
+      all: ['test/*.html']
+    },
+
     watch: {
       gruntfile: {
         files: 'Gruntfile.js',
@@ -53,9 +58,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-qunit');
 
   // Default task(s).
-  grunt.registerTask('default', ['sass','coffee','uglify','watch']);
+  grunt.registerTask('default', ['sass','coffee','uglify','watch', 'qunit']);
   grunt.registerTask('css', ['sass']);
   grunt.registerTask('js', ['coffee','uglify']);
 

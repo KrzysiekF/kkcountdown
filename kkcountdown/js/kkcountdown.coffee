@@ -1,5 +1,21 @@
-# Define the plugin class
+#  
+#  Plugin kkcountdown counts down to specific dates in the future.
+# 
+#  @example
+#  $(".come-class").kkcountdown();
+# 
+#  @type jQuery
+# 
+#  @name kkcountdown
+#  @author Krzysztof Furtak :: http://krzysztof-furtak.pl/
+#  @version 1.4
+# 
+#  Documentation: http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/
+# 
+
 class KKCountdown
+
+  version: 1.4
 
   defaults:
     dayText         :   'day '
@@ -27,17 +43,20 @@ class KKCountdown
 
 
   constructor: (el, options) ->
+    _this = @
+
     @opts = $.extend({}, @defaults, options)
     @$el = $(el)
     @countdowns = []
 
     @prepareHTML()
+
     @countdownInit(@$el)
 
   
   prepareHTML:  ->
     _this = @
-
+    
     box = $(document.createElement('span')).addClass('kkcountdown-box')
     boxDni = $(document.createElement('span')).addClass('kkc-dni')
     boxGodz = $(document.createElement('span')).addClass('kkc-godz')
