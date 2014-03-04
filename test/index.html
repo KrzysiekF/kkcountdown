@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>KK Countdown :: jQuery plugin :: DEMO</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../assets/lib/jquery.js" type="text/javascript"></script>
+        <script src="../kkcountdown/js/build/kkcountdown.min.js" type="text/javascript"></script>
+
+        <!-- // <script src="assets/lib/sharrre/jquery.sharrre.min.js"></script> -->
+
+        <link rel="stylesheet" type="text/css" href="../assets/css/build/style.css">
+        <link rel="stylesheet" type="text/css" href="../assets/lib/qunit/qunit-1.14.0.css">
+        <script src="../assets/lib/qunit/qunit-1.14.0.js" type="text/javascript"></script>
+        
+        <script src="test.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <header>
+            <div class="box">
+                <img src="../assets/img/kf-logo.png" alt="Krzysztof Furtak">
+                <a href="http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/" class="button">
+                    Back to plugin website
+                </a>
+            </div>
+        </header>
+
+        <div id="qunit"></div>
+
+        <section>
+            <div class="box">
+                <h2>KK Countdown :: jQuery plugin</h2>
+                
+                <div class="big-countdown">
+                    <h3>To 14.02.2016 20:00:00</h3>
+                    <div>
+                        <span data-time="1455476400" class="kkcountdown-1"></span>
+                    </div>
+                </div>
+
+                <div class="countdown text-center">
+                    Start a timer for 
+                    <span>
+                        <input type="text" name="secs" id="secs" value="60" style="width:3em;" />
+                    </span> 
+                    seconds from now: 
+                    <button id="go" class="button">Go go go!</button>
+                    <span data-seconds="60" class="kkcountdown-2"></span>
+                </div>
+            </div>
+            <br><br>
+        </section>
+
+        <footer>
+            <div class="box">
+                Krzysztof Furtak &copy; copyright 2011 - 2014
+            </div>
+        </footer>
+
+    </body>
+</html>

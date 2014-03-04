@@ -2,6 +2,8 @@
   var KKCountdown;
 
   KKCountdown = (function() {
+    KKCountdown.prototype.version = 1.4;
+
     KKCountdown.prototype.defaults = {
       dayText: 'day ',
       days2Text: 'days ',
@@ -23,6 +25,8 @@
     };
 
     function KKCountdown(el, options) {
+      var _this;
+      _this = this;
       this.opts = $.extend({}, this.defaults, options);
       this.$el = $(el);
       this.countdowns = [];
