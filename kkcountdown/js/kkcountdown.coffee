@@ -4,7 +4,7 @@
 #  @example
 #  $(".come-class").kkcountdown();
 # 
-#  @type jQuery
+#  @type jQuery Plugin
 # 
 #  @name kkcountdown
 #  @author Krzysztof Furtak :: http://krzysztof-furtak.pl/
