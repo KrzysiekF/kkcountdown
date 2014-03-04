@@ -43,6 +43,7 @@ class KKCountdown
 
 
   constructor: (el, options) ->
+
     _this = @
 
     @opts = $.extend({}, @defaults, options)
@@ -50,7 +51,6 @@ class KKCountdown
     @countdowns = []
 
     @prepareHTML()
-
     @countdownInit(@$el)
 
   
@@ -89,7 +89,7 @@ class KKCountdown
 
     @$el.append(box);
 
-  countdownInit: (obj) -> 
+  countdownInit: (obj) ->
     count = 0
     _this = @
 
@@ -136,6 +136,7 @@ class KKCountdown
       setTimeout ->
         _this.countdownInit(obj)
       , 1000
+
 
   countdown: (warning, obj, count) ->
     _this = @
