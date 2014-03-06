@@ -8,7 +8,7 @@
 # 
 #  @name kkcountdown
 #  @author Krzysztof Furtak :: http://krzysztof-furtak.pl/
-#  @version 1.4
+#  @version 1.4.1
 # 
 #  Documentation: http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/
 # 

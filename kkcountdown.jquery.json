@@ -1,7 +1,7 @@
 {
 	"name": "kkcountdown",
 	"title": "KK Countdown",
-	"version": "1.4",
+	"version": "1.4.1",
 	"description": "Plugin KK Countdown counts down to specific dates in the future.",
 	"keywords": ["countdown", "time", "count", "down"],
 	"author": {
