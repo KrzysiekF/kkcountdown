@@ -21,7 +21,18 @@
       callback: false,
       warnSeconds: 60,
       warnClass: false,
-      rusNumbers: false
+      rusNumbers: false,
+      boxContenerClass: 'kkcountdown-box',
+      boxDaysClass: 'kkc-days',
+      boxHoursClass: 'kkc-hours',
+      boxMinClass: 'kkc-min',
+      boxSecClass: 'kkc-sec',
+      boxDaysTextClass: 'kkc-days-text',
+      boxHoursTextClass: 'kkc-hours-text',
+      boxMinTextClass: 'kkc-min-text',
+      boxSecTextClass: 'kkc-sec-text',
+      theme: false,
+      themeSize: 'default'
     };
 
     function KKCountdown(el, options) {
@@ -35,24 +46,24 @@
     }
 
     KKCountdown.prototype.prepareHTML = function() {
-      var box, boxDni, boxDniText, boxGodz, boxGodzText, boxMin, boxMinText, boxSec, boxSecText, _this;
+      var box, boxDays, boxDaysText, boxHours, boxHoursText, boxMin, boxMinText, boxSec, boxSecText, _this;
       _this = this;
-      box = $(document.createElement('span')).addClass('kkcountdown-box');
-      boxDni = $(document.createElement('span')).addClass('kkc-dni');
-      boxGodz = $(document.createElement('span')).addClass('kkc-godz');
-      boxMin = $(document.createElement('span')).addClass('kkc-min');
-      boxSec = $(document.createElement('span')).addClass('kkc-sec');
-      boxDniText = $(document.createElement('span')).addClass('kkc-dni-text');
-      boxGodzText = $(document.createElement('span')).addClass('kkc-godz-text');
-      boxMinText = $(document.createElement('span')).addClass('kkc-min-text');
-      boxSecText = $(document.createElement('span')).addClass('kkc-sec-text');
+      box = $(document.createElement('span')).addClass(_this.opts.boxContenerClass);
+      boxDays = $(document.createElement('span')).addClass(_this.opts.boxDaysClass);
+      boxHours = $(document.createElement('span')).addClass(_this.opts.boxHoursClass);
+      boxMin = $(document.createElement('span')).addClass(_this.opts.boxMinClass);
+      boxSec = $(document.createElement('span')).addClass(_this.opts.boxSecClass);
+      boxDaysText = $(document.createElement('span')).addClass(_this.opts.boxDaysTextClass);
+      boxHoursText = $(document.createElement('span')).addClass(_this.opts.boxHoursTextClass);
+      boxMinText = $(document.createElement('span')).addClass(_this.opts.boxMinTextClass);
+      boxSecText = $(document.createElement('span')).addClass(_this.opts.boxSecTextClass);
       if (_this.opts.addClass) {
         box.addClass(_this.opts.addClass);
       }
-      boxGodzText.html(_this.opts.hoursText);
+      boxHoursText.html(_this.opts.hoursText);
       boxMinText.html(_this.opts.minutesText);
       boxSecText.html(_this.opts.secondsText);
-      box.append(boxDni).append(boxDniText).append(boxGodz).append(boxGodzText).append(boxMin).append(boxMinText).append(boxSec).append(boxSecText);
+      box.append(boxDays).append(boxDaysText).append(boxHours).append(boxHoursText).append(boxMin).append(boxMinText).append(boxSec).append(boxSecText);
       return this.$el.append(box);
     };
 
@@ -113,13 +124,13 @@
         obj.addClass(_this.opts.oneDayClass);
       }
       if (_this.opts.displayZeroDays && days >= 0) {
-        obj.find('.kkc-dni').html(days);
-        obj.find('.kkc-dni-text').html(this.formatText(days, 'day'));
+        obj.find('.' + _this.opts.boxDaysClass).html(days);
+        obj.find('.' + _this.opts.boxDaysTextClass).html(this.formatText(days, 'day'));
       }
-      obj.find('.kkc-godz').html(hours);
-      obj.find('.kkc-godz-text').html(this.formatText(hours, 'hour'));
-      obj.find('.kkc-min').html(minutes);
-      return obj.find('.kkc-sec').html(seconds);
+      obj.find('.' + _this.opts.boxHoursClass).html(hours);
+      obj.find('.' + _this.opts.boxHoursTextClass).html(this.formatText(hours, 'hour'));
+      obj.find('.' + _this.opts.boxMinClass).html(minutes);
+      return obj.find('.' + _this.opts.boxSecClass).html(seconds);
     };
 
     KKCountdown.prototype.formatText = function(nr, text) {

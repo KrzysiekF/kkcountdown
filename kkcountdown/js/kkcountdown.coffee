@@ -18,6 +18,7 @@ class KKCountdown
   version: 1.4
 
   defaults:
+    # Texts
     dayText         :   'day '
     days2Text       :   'days '
     daysText        :   'days '
@@ -27,11 +28,10 @@ class KKCountdown
     hoursText       :   'hours '
 
     minutesText     :   ':'
-
     secondsText     :   ''
-
     textAfterCount  :   '---'
 
+    # Main Settings
     oneDayClass     :   false
     displayDays     :   true
     displayZeroDays :   true
@@ -40,6 +40,21 @@ class KKCountdown
     warnSeconds     :   60
     warnClass       :   false
     rusNumbers      :   false
+
+    #Classes
+    boxContenerClass  :   'kkcountdown-box'
+    boxDaysClass      :   'kkc-days'
+    boxHoursClass     :   'kkc-hours'
+    boxMinClass       :   'kkc-min'
+    boxSecClass       :   'kkc-sec'
+    boxDaysTextClass  :   'kkc-days-text'
+    boxHoursTextClass :   'kkc-hours-text'
+    boxMinTextClass   :   'kkc-min-text'
+    boxSecTextClass   :   'kkc-sec-text'
+
+    # Themes 
+    theme           :   false       # can choose: dark
+    themeSize       :   'default'   # can choose: big, default, small
 
 
   constructor: (el, options) ->
@@ -57,30 +72,30 @@ class KKCountdown
   prepareHTML:  ->
     _this = @
     
-    box = $(document.createElement('span')).addClass('kkcountdown-box')
-    boxDni = $(document.createElement('span')).addClass('kkc-dni')
-    boxGodz = $(document.createElement('span')).addClass('kkc-godz')
-    boxMin = $(document.createElement('span')).addClass('kkc-min')
-    boxSec = $(document.createElement('span')).addClass('kkc-sec')
-    boxDniText = $(document.createElement('span')).addClass('kkc-dni-text')
-    boxGodzText = $(document.createElement('span')).addClass('kkc-godz-text')
-    boxMinText = $(document.createElement('span')).addClass('kkc-min-text')
-    boxSecText = $(document.createElement('span')).addClass('kkc-sec-text')
+    box = $(document.createElement('span')).addClass( _this.opts.boxContenerClass )
+    boxDays = $(document.createElement('span')).addClass( _this.opts.boxDaysClass )
+    boxHours = $(document.createElement('span')).addClass( _this.opts.boxHoursClass )
+    boxMin = $(document.createElement('span')).addClass( _this.opts.boxMinClass )
+    boxSec = $(document.createElement('span')).addClass( _this.opts.boxSecClass )
+    boxDaysText = $(document.createElement('span')).addClass( _this.opts.boxDaysTextClass )
+    boxHoursText = $(document.createElement('span')).addClass( _this.opts.boxHoursTextClass )
+    boxMinText = $(document.createElement('span')).addClass( _this.opts.boxMinTextClass )
+    boxSecText = $(document.createElement('span')).addClass( _this.opts.boxSecTextClass )
 
 
     box.addClass(_this.opts.addClass) if _this.opts.addClass
 
     
-    boxGodzText.html(_this.opts.hoursText)
+    boxHoursText.html(_this.opts.hoursText)
     boxMinText.html(_this.opts.minutesText)
     boxSecText.html(_this.opts.secondsText)
 
 
     box
-      .append(boxDni)
-      .append(boxDniText)
-      .append(boxGodz)
-      .append(boxGodzText)
+      .append(boxDays)
+      .append(boxDaysText)
+      .append(boxHours)
+      .append(boxHoursText)
       .append(boxMin)
       .append(boxMinText)
       .append(boxSec)
@@ -155,14 +170,14 @@ class KKCountdown
     obj.addClass _this.opts.oneDayClass if _this.opts.oneDayClass and warning
 
     if _this.opts.displayZeroDays and days >= 0
-      obj.find('.kkc-dni').html days
-      obj.find('.kkc-dni-text').html @formatText(days, 'day')
+      obj.find( '.' + _this.opts.boxDaysClass ).html days
+      obj.find( '.' + _this.opts.boxDaysTextClass ).html @formatText(days, 'day')
 
-    obj.find('.kkc-godz').html hours
-    obj.find('.kkc-godz-text').html @formatText(hours, 'hour')
+    obj.find('.' + _this.opts.boxHoursClass ).html hours
+    obj.find('.' + _this.opts.boxHoursTextClass ).html @formatText(hours, 'hour')
 
-    obj.find('.kkc-min').html minutes
-    obj.find('.kkc-sec').html seconds
+    obj.find('.' + _this.opts.boxMinClass ).html minutes
+    obj.find('.' + _this.opts.boxSecClass ).html seconds
     
 
   formatText: (nr, text) ->

@@ -1,0 +1,169 @@
+@keyframes flip1 {
+    0% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(0deg);
+    }
+}
+
+@keyframes flip2 {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes index {
+    0% {
+        z-index: 2;
+    }
+    5% {
+        z-index: 4;
+    }
+    100% {
+        z-index: 4;
+    }
+}
+
+.countdown-content {
+    display: inline-block;
+    position: relative;
+
+    color: #f1f1f1;
+    font-size: 40px;
+    line-height: 45px;
+    text-align: center;
+    width: 30px;
+    height: 45px;
+}
+
+.countdown-content > span {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 75px;
+}
+
+.countdown-content > span > span {
+    display: block;
+    position: absolute;
+    background: #333;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.countdown-content .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.countdown-content .current {
+    z-index: 1;
+}
+
+.countdown-content > span .top {
+    top: 0;
+    transform-origin: 50% 100%;
+}
+
+.countdown-content > span .bottom {
+    bottom: 0;
+    transform-origin: 50% 0%;
+}
+
+.countdown-content > span .top:after {
+    background: none repeat scroll 0 0 #000000;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.countdown-content > span .bottom .value {
+    display: block;
+    position: absolute;
+    height: 200%;
+    width: 100%;
+    bottom: 0;
+}
+
+.countdown-content.active .current .top {
+    animation: flip2 .3s linear both;
+}
+
+.countdown-content.active .next .bottom {
+    animation: flip1 .3s .3s linear both, index .3s .3s linear both;
+}
+
+.countdown-content.active .current .top .shadow {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, 1)));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -moz-linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -o-linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  
+  animation: show .3s linear both;
+}
+
+.countdown-content.active .current .bottom .shadow {
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, .1)));
+    background: linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    z-index: 2;
+    
+    animation: show .3s linear both;
+}
+
+.countdown-content.active .next .top .shadow {
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, .1)), to(rgba(0, 0, 0, 1)));
+  background: -webkit-linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -moz-linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: -o-linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(rgba(0, 0, 0, .1) 0%, rgba(0, 0, 0, 1) 100%);
+  
+  animation: hide .3s .2s linear both;
+}
+
+.countdown-content.active .next .bottom .shadow {
+   background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(100%, rgba(0, 0, 0, .1)));
+    background: linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -o-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: -ms-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .1) 100%);
+    z-index: 2;
+  
+    animation: hide .3s .2s linear both;
+}
