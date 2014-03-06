@@ -2,7 +2,7 @@
   var KKCountdown;
 
   KKCountdown = (function() {
-    KKCountdown.prototype.version = 1.4;
+    KKCountdown.prototype.version = '1.4.1';
 
     KKCountdown.prototype.defaults = {
       dayText: 'day ',
