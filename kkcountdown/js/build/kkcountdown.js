@@ -30,9 +30,7 @@
       boxDaysTextClass: 'kkc-days-text',
       boxHoursTextClass: 'kkc-hours-text',
       boxMinTextClass: 'kkc-min-text',
-      boxSecTextClass: 'kkc-sec-text',
-      theme: false,
-      themeSize: 'default'
+      boxSecTextClass: 'kkc-sec-text'
     };
 
     function KKCountdown(el, options) {

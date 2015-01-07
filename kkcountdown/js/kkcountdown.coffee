@@ -52,10 +52,6 @@ class KKCountdown
     boxMinTextClass   :   'kkc-min-text'
     boxSecTextClass   :   'kkc-sec-text'
 
-    # Themes 
-    theme           :   false       # can choose: dark
-    themeSize       :   'default'   # can choose: big, default, small
-
 
   constructor: (el, options) ->
 
