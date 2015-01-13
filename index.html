@@ -3,10 +3,8 @@
     <head>
         <title>KK Countdown :: jQuery plugin :: DEMO</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="assets/lib/jquery.js" type="text/javascript"></script>
-        <script src="kkcountdown/js/build/kkcountdown.min.js" type="text/javascript"></script>
-
-        <!-- // <script src="assets/lib/sharrre/jquery.sharrre.min.js"></script> -->
+        <script src="bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="kkcountdown/js/build/kkcountdown.js" type="text/javascript"></script>
 
         <link rel="stylesheet" type="text/css" href="assets/css/build/style.css">
 
@@ -34,15 +32,16 @@
 	                $(".kkcountdown-2")
 	                	.attr('data-seconds', secs)
 	                	.kkcountdown({
-	                    hoursText	: ':',
-	                    minutesText	: ':',
-	                    secondsText	: '',
-	                    displayZeroDays : true,
-	                    textAfterCount: 'Hello! :-) ',
-	                    warnSeconds : 10,
-	                    warnClass   : 'alert',
-                        callback : test
-	                });
+                            displayDays:        true,
+                            displayZeroDays:    false,
+    	                    hoursText:          ':',
+    	                    minutesText:        ':',
+    	                    secondsText:        '',
+    	                    textAfterCount:     'Hello! :-) ',
+    	                    warnSeconds:        10,
+    	                    warnClass:          'alert',
+                            callback:           cBack
+    	                });
                 });
 
             });
@@ -116,7 +115,7 @@
 
         <footer>
             <div class="box">
-                Krzysztof Furtak &copy; copyright 2011 - 2014
+                Krzysztof Furtak &copy; copyright 2011 - 2015
             </div>
         </footer>
         <script>

@@ -1,1 +1,144 @@
-@font-face{font-family:'open_sanslight';src:url("../../fonts/OpenSans-Light-webfont.eot");src:url("../../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"),url("../../fonts/OpenSans-Light-webfont.woff") format("woff"),url("../../fonts/OpenSans-Light-webfont.ttf") format("truetype"),url("../../fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");font-weight:normal;font-style:normal}@font-face{font-family:'open_sansbold';src:url("../../fonts/OpenSans-Bold-webfont.eot");src:url("../../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"),url("../../fonts/OpenSans-Bold-webfont.woff") format("woff"),url("../../fonts/OpenSans-Bold-webfont.ttf") format("truetype"),url("../../fonts/OpenSans-Bold-webfont.svg#open_sansbold") format("svg");font-weight:normal;font-style:normal}@font-face{font-family:'open_sansitalic';src:url("../../fonts/OpenSans-Italic-webfont.eot");src:url("../../fonts/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"),url("../../fonts/OpenSans-Italic-webfont.woff") format("woff"),url("../../fonts/OpenSans-Italic-webfont.ttf") format("truetype"),url("../../fonts/OpenSans-Italic-webfont.svg#open_sansitalic") format("svg");font-weight:normal;font-style:normal}@font-face{font-family:'open_sansregular';src:url("../../fonts/OpenSans-Regular-webfont.eot");src:url("../../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"),url("../../fonts/OpenSans-Regular-webfont.woff") format("woff"),url("../../fonts/OpenSans-Regular-webfont.ttf") format("truetype"),url("../../fonts/OpenSans-Regular-webfont.svg#open_sansregular") format("svg");font-weight:normal;font-style:normal}.font-light,section h2,section .big-countdown>div>span{font-family:'open_sanslight', Arial, Tahoma, sans-serif;font-weight:normal}.font-bold,section .countdown input[type="text"],section .countdown .kkcountdown-2{font-family:'open_sansbold', Arial, Tahoma, sans-serif;font-weight:normal}.font-italic{font-family:'open_sansitalic', Arial, Tahoma, sans-serif;font-weight:normal}.font-regular,body,section .countdown .kkc-days-text,section .countdown .kkc-hours-text,section .countdown .kkc-min-text,section .countdown .kkc-sec-text{font-family:'open_sansregular', Arial, Tahoma, sans-serif;font-weight:normal}html,body{margin:0;padding:0}body{background:#222;font-size:16px}.box{margin:0 auto;max-width:980px}.text-center{text-align:center}.alert{color:red !important}.button{background-color:#417fe2;background-image:-moz-linear-gradient(#417fe2, #3767b9);background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#417fe2), to(#3767b9));background-image:-webkit-linear-gradient(#417fe2, #3767b9);background-image:-o-linear-gradient(#417fe2, #3767b9);color:#ffffff;border-radius:3px;box-shadow:0 1px 0 #23447a,0 1px 0 rgba(255,255,255,0.4) inset;color:#FFFFFF;line-height:1;padding:9px 15px;text-decoration:none;font-size:11px;text-shadow:0 1px 0 #23447A;text-transform:uppercase;border:none;cursor:pointer}.button:hover{background-color:#3767b9;background-image:-moz-linear-gradient(#3767b9, #417fe2);background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#3767b9), to(#417fe2));background-image:-webkit-linear-gradient(#3767b9, #417fe2);background-image:-o-linear-gradient(#3767b9, #417fe2)}header{height:70px}header img{margin:15px 0 0}header .button{float:right;margin:19px 0 0}section{background:#f1f1f1;padding:50px 0 70px}section h2{font-size:32px;margin:0 0 45px;text-align:center;text-transform:uppercase}section .big-countdown h3{font-weight:normal;font-size:13px;text-align:center;margin:0}section .big-countdown>div{text-align:center;margin:0 0 25px 0}section .big-countdown>div>span{font-size:52px;text-shadow:1px 1px 0 #ffffff;color:#3767b9}section .big-countdown .kkc-days-text,section .big-countdown .kkc-hours-text,section .big-countdown .kkc-min-text,section .big-countdown .kkc-sec-text{font-size:28px;margin-right:10px;color:#666}section .countdown{font-size:20px}section .countdown input[type="text"]{border:1px solid #ccc;border-radius:3px;font-size:24px;text-align:center;color:#3767b9}section .countdown .button{top:-4px;position:relative}section .countdown .kkcountdown-2{color:#3767b9}section .countdown .kkc-days-text,section .countdown .kkc-hours-text,section .countdown .kkc-min-text,section .countdown .kkc-sec-text{font-size:16px;margin:0 2px;color:#666}footer{color:#ffffff;padding:20px 0 50px;text-align:center;font-size:11px}
+@font-face {
+  font-family: 'open_sanslight';
+  src: url("../../fonts/OpenSans-Light-webfont.eot");
+  src: url("../../fonts/OpenSans-Light-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-Light-webfont.woff") format("woff"), url("../../fonts/OpenSans-Light-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-Light-webfont.svg#open_sanslight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'open_sansbold';
+  src: url("../../fonts/OpenSans-Bold-webfont.eot");
+  src: url("../../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-Bold-webfont.woff") format("woff"), url("../../fonts/OpenSans-Bold-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-Bold-webfont.svg#open_sansbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'open_sansitalic';
+  src: url("../../fonts/OpenSans-Italic-webfont.eot");
+  src: url("../../fonts/OpenSans-Italic-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-Italic-webfont.woff") format("woff"), url("../../fonts/OpenSans-Italic-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-Italic-webfont.svg#open_sansitalic") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'open_sansregular';
+  src: url("../../fonts/OpenSans-Regular-webfont.eot");
+  src: url("../../fonts/OpenSans-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-Regular-webfont.woff") format("woff"), url("../../fonts/OpenSans-Regular-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-Regular-webfont.svg#open_sansregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.font-light, section h2, section .big-countdown > div > span {
+  font-family: 'open_sanslight', Arial, Tahoma, sans-serif;
+  font-weight: normal; }
+
+.font-bold, section .countdown input[type="text"], section .countdown .kkcountdown-2 {
+  font-family: 'open_sansbold', Arial, Tahoma, sans-serif;
+  font-weight: normal; }
+
+.font-italic {
+  font-family: 'open_sansitalic', Arial, Tahoma, sans-serif;
+  font-weight: normal; }
+
+.font-regular, body, section .countdown .kkc-days-text,
+section .countdown .kkc-hours-text,
+section .countdown .kkc-min-text,
+section .countdown .kkc-sec-text {
+  font-family: 'open_sansregular', Arial, Tahoma, sans-serif;
+  font-weight: normal; }
+
+html,
+body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #222;
+  font-size: 16px; }
+
+.box {
+  margin: 0 auto;
+  max-width: 980px; }
+
+.text-center {
+  text-align: center; }
+
+.alert {
+  color: red !important; }
+
+.button {
+  background-color: #417fe2;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#417fe2), to(#3767B9));
+  background-image: -webkit-linear-gradient(#417fe2, #3767B9);
+  color: #ffffff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 #23447A, 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  color: #FFFFFF;
+  line-height: 1;
+  padding: 9px 15px;
+  text-decoration: none;
+  font-size: 11px;
+  text-shadow: 0 1px 0 #23447A;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer; }
+  .button:hover {
+    background-color: #3767B9;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3767B9), to(#417fe2));
+    background-image: -webkit-linear-gradient(#3767B9, #417fe2); }
+
+header {
+  height: 70px; }
+  header img {
+    margin: 15px 0 0; }
+  header .button {
+    float: right;
+    margin: 19px 0 0; }
+
+section {
+  background: #f1f1f1;
+  padding: 50px 0 70px; }
+  section h2 {
+    font-size: 32px;
+    margin: 0 0 45px;
+    text-align: center;
+    text-transform: uppercase; }
+  section .big-countdown h3 {
+    font-weight: normal;
+    font-size: 13px;
+    text-align: center;
+    margin: 0; }
+  section .big-countdown > div {
+    text-align: center;
+    margin: 0 0 25px 0; }
+    section .big-countdown > div > span {
+      font-size: 52px;
+      text-shadow: 1px 1px 0 #ffffff;
+      color: #3767B9; }
+  section .big-countdown .kkc-days-text,
+  section .big-countdown .kkc-hours-text,
+  section .big-countdown .kkc-min-text,
+  section .big-countdown .kkc-sec-text {
+    font-size: 28px;
+    margin-right: 10px;
+    color: #666; }
+  section .countdown {
+    font-size: 20px; }
+    section .countdown input[type="text"] {
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 24px;
+      text-align: center;
+      color: #3767B9; }
+    section .countdown .button {
+      top: -4px;
+      position: relative; }
+    section .countdown .kkcountdown-2 {
+      color: #3767B9; }
+    section .countdown .kkc-days-text,
+    section .countdown .kkc-hours-text,
+    section .countdown .kkc-min-text,
+    section .countdown .kkc-sec-text {
+      font-size: 16px;
+      margin: 0 2px;
+      color: #666; }
+
+footer {
+  color: #ffffff;
+  padding: 20px 0 50px;
+  text-align: center;
+  font-size: 11px; }
