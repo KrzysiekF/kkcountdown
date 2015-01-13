@@ -122,9 +122,14 @@
       if (_this.opts.oneDayClass && warning) {
         obj.addClass(_this.opts.oneDayClass);
       }
-      if (_this.opts.displayZeroDays && days >= 0) {
-        obj.find('.' + _this.opts.boxDaysClass).html(days);
-        obj.find('.' + _this.opts.boxDaysTextClass).html(this.formatText(days, 'day'));
+      if (_this.opts.displayDays) {
+        if (days === 0 && _this.opts.displayZeroDays) {
+          obj.find('.' + _this.opts.boxDaysClass).html(days);
+          obj.find('.' + _this.opts.boxDaysTextClass).html(this.formatText(days, 'day'));
+        } else if (days > 0) {
+          obj.find('.' + _this.opts.boxDaysClass).html(days);
+          obj.find('.' + _this.opts.boxDaysTextClass).html(this.formatText(days, 'day'));
+        }
       }
       obj.find('.' + _this.opts.boxHoursClass).html(hours);
       obj.find('.' + _this.opts.boxHoursTextClass).html(this.formatText(hours, 'hour'));

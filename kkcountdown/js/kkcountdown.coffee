@@ -1,17 +1,17 @@
-#  
+#
 #  Plugin kkcountdown counts down to specific dates in the future.
-# 
+#
 #  @example
 #  $(".come-class").kkcountdown();
-# 
+#
 #  @type jQuery Plugin
-# 
+#
 #  @name kkcountdown
 #  @author Krzysztof Furtak :: http://krzysztof-furtak.pl/
 #  @version 1.4.1
-# 
+#
 #  Documentation: http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/
-# 
+#
 
 class KKCountdown
 
@@ -165,9 +165,13 @@ class KKCountdown
 
     obj.addClass _this.opts.oneDayClass if _this.opts.oneDayClass and warning
 
-    if _this.opts.displayZeroDays and days >= 0
-      obj.find( '.' + _this.opts.boxDaysClass ).html days
-      obj.find( '.' + _this.opts.boxDaysTextClass ).html @formatText(days, 'day')
+    if _this.opts.displayDays
+      if days == 0 and _this.opts.displayZeroDays
+        obj.find( '.' + _this.opts.boxDaysClass ).html days
+        obj.find( '.' + _this.opts.boxDaysTextClass ).html @formatText(days, 'day')
+      else if days > 0
+        obj.find( '.' + _this.opts.boxDaysClass ).html days
+        obj.find( '.' + _this.opts.boxDaysTextClass ).html @formatText(days, 'day')
 
     obj.find('.' + _this.opts.boxHoursClass ).html hours
     obj.find('.' + _this.opts.boxHoursTextClass ).html @formatText(hours, 'hour')

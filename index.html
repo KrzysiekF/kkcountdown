@@ -32,15 +32,16 @@
 	                $(".kkcountdown-2")
 	                	.attr('data-seconds', secs)
 	                	.kkcountdown({
-	                    hoursText	: ':',
-	                    minutesText	: ':',
-	                    secondsText	: '',
-	                    displayZeroDays : true,
-	                    textAfterCount: 'Hello! :-) ',
-	                    warnSeconds : 10,
-	                    warnClass   : 'alert',
-                        callback : cBack
-	                });
+                            displayDays:        true,
+                            displayZeroDays:    false,
+    	                    hoursText:          ':',
+    	                    minutesText:        ':',
+    	                    secondsText:        '',
+    	                    textAfterCount:     'Hello! :-) ',
+    	                    warnSeconds:        10,
+    	                    warnClass:          'alert',
+                            callback:           cBack
+    	                });
                 });
 
             });
