@@ -1,0 +1,24 @@
+{
+  "name": "kkcountdown",
+  "version": "1.4.1",
+  "homepage": "http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/",
+  "authors": [
+    "Krzysiek Furtak <krzysztof.furtak@gmail.com>"
+  ],
+  "description": "Plugin KK Countdown counts down to specific dates in the future.",
+  "main": "/kkcountdown/js/build/kkcountdown.js",
+  "license": "MIT",
+  "keywords": [
+    "kkcountdown",
+    "countdown",
+    "jquery",
+    "plugin"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
