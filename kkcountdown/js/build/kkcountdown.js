@@ -70,14 +70,16 @@
     };
 
     KKCountdown.prototype.reset = function(obj) {
-      return alert('okok');
+      if (obj.id !== void 0) {
+        return obj.id = null;
+      }
     };
 
     KKCountdown.prototype.countdownInit = function(obj) {
       var count, event, now, _this;
       count = 0;
       _this = this;
-      if (obj.id === void 0) {
+      if (obj.id === void 0 || obj.id === null) {
         obj.id = 'kk_' + Math.random(new Date().getTime());
       }
       if (_this.countdowns[obj.id] || _this.countdowns[obj.id] === 0) {

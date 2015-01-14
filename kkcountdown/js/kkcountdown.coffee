@@ -103,14 +103,14 @@ class KKCountdown
     @$el.append(box);
 
   reset: (obj) ->
-    alert 'okok'
+    obj.id = null if obj.id != undefined
 
   countdownInit: (obj) ->
     count = 0
     _this = @
 
     #Jesli nie istnieje ID obiektu to tworzymy losowe ID
-    obj.id = 'kk_'+ Math.random( new Date().getTime() ) if obj.id == undefined
+    obj.id = 'kk_'+ Math.random( new Date().getTime() ) if obj.id == undefined or obj.id == null
 
     if _this.countdowns[obj.id] or _this.countdowns[obj.id] == 0
       count = _this.countdowns[obj.id]
