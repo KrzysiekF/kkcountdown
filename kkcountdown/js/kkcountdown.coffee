@@ -63,6 +63,8 @@ class KKCountdown
 
     @prepareHTML()
     @countdownInit(@$el)
+    @$el.on 'countdown:reset', ->
+      _this.reset(_this.$el)
 
   
   prepareHTML:  ->
@@ -99,6 +101,9 @@ class KKCountdown
 
 
     @$el.append(box);
+
+  reset: (obj) ->
+    alert 'okok'
 
   countdownInit: (obj) ->
     count = 0

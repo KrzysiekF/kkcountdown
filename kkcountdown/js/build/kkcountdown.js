@@ -42,6 +42,9 @@
       this.countdowns = [];
       this.prepareHTML();
       this.countdownInit(this.$el);
+      this.$el.on('countdown:reset', function() {
+        return _this.reset(_this.$el);
+      });
     }
 
     KKCountdown.prototype.prepareHTML = function() {
@@ -64,6 +67,10 @@
       boxSecText.html(_this.opts.secondsText);
       box.append(boxDays).append(boxDaysText).append(boxHours).append(boxHoursText).append(boxMin).append(boxMinText).append(boxSec).append(boxSecText);
       return this.$el.append(box);
+    };
+
+    KKCountdown.prototype.reset = function(obj) {
+      return alert('okok');
     };
 
     KKCountdown.prototype.countdownInit = function(obj) {
@@ -194,6 +201,3 @@
   });
 
 }).call(this);
-
-
-//# sourceMappingURL=kkcountdown.js.map

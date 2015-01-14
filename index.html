@@ -23,14 +23,16 @@
                 });
 
                 $("#go").on('click', function() {
-                	var secs = $("#secs").val();
+                	var secs = $("#secs").val(),
+                        cdBox = $(".kkcountdown-2");
 
                 	$("#secs").parent("span").html("<strong>"+secs+"</strong>");
                 	$("#go").hide();
-                    $('.reset').show();
+                    $('.reset').show().on('click', function() {
+                        cdBox.trigger('countdown:reset');
+                    });
 
-	                $(".kkcountdown-2")
-	                	.attr('data-seconds', secs)
+	                cdBox.attr('data-seconds', secs)
 	                	.kkcountdown({
                             displayDays:        true,
                             displayZeroDays:    false,
