@@ -26,8 +26,8 @@
                 	var secs = $("#secs").val();
 
                 	$("#secs").parent("span").html("<strong>"+secs+"</strong>");
-
                 	$("#go").hide();
+                    $('.reset').show();
 
 	                $(".kkcountdown-2")
 	                	.attr('data-seconds', secs)
@@ -81,6 +81,7 @@
                     seconds from now: 
                     <button id="go" class="button">Go go go!</button>
                     <span data-seconds="60" class="kkcountdown-2"></span>
+                    <button class="button reset" style="display: none;">Reset</button>
                 </div>
             </div>
             <br><br>
