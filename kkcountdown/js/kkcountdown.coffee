@@ -8,14 +8,14 @@
 #
 #  @name kkcountdown
 #  @author Krzysztof Furtak :: http://krzysztof-furtak.pl/
-#  @version 1.4.1
+#  @version 1.4.2
 #
 #  Documentation: http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/
 #
 
 class KKCountdown
 
-  version: '1.4.1'
+  version: '1.4.2'
 
   defaults:
     # Texts
