@@ -2,7 +2,7 @@ import KKCountdown from '../../src/index';
 
 class Demo {
   constructor() {
-    console.log('==> DMEO <==');
+    console.log('==> DEMO <==');
 
     this.demoStart();
   }
