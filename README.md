@@ -1,4 +1,4 @@
-# kkcountdown
+# KKCountdown - v2.0.0-Alpha (please don't use in production)
 
 [![Travis][build-badge]][build]
 [![npm package][npm-badge]][npm]
