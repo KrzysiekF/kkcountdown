@@ -1,16 +1,16 @@
-KKCountdown
+# kkcountdown
 
-===========
+[![Travis][build-badge]][build]
+[![npm package][npm-badge]][npm]
+[![Coveralls][coveralls-badge]][coveralls]
 
-Plugin KK Countdown counts down to specific dates in the future.
+Describe kkcountdown here.
 
-===========
+[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
+[build]: https://travis-ci.org/user/repo
 
+[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
+[npm]: https://www.npmjs.org/package/npm-package
 
-For more information please visit plugin site: [here][home]
-
-Plugin DEMO: [here][demo]
-
-
-[home]: http://krzysztof-furtak.pl/kk-countdown-jquery-plugin/
-[demo]: http://krzysztof-furtak.pl/demo-plugins/jquery-kkcountdown/
+[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
+[coveralls]: https://coveralls.io/github/user/repo
