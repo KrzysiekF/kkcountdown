@@ -1,14 +1,35 @@
 {
   "name": "kkcountdown",
-  "version": "1.3.8",
+  "version": "1.0.0",
+  "description": "Plugin KK Countdown counts down to specific dates in the future.",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-web-module",
+    "clean": "nwb clean-module",
+    "test": "nwb test",
+    "test:coverage": "nwb test --coverage",
+    "test:watch": "nwb test --server"
+  },
+  "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-jshint": "~0.6.x",
-    "grunt-contrib-nodeunit": "~0.2.x",
-    "grunt-contrib-uglify": "~0.3.2",
-    "grunt-contrib-sass": "~0.7.2",
-    "grunt-contrib-coffee": "~0.9.0",
-    "grunt-contrib-watch": "~0.5.3",
-    "grunt-contrib-qunit": "~0.4.0"
-  }
+    "babel": "^6.23.0",
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1",
+    "nwb": "0.18.x"
+  },
+  "author": "",
+  "homepage": "",
+  "license": "MIT",
+  "repository": ""
 }
