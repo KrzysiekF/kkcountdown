@@ -10,7 +10,7 @@ Installation / Download
 -----------------------
 
 #### NPM
-`COMING SOON`
+`npm install --save kk-countdown`
 
 Import
 --------
