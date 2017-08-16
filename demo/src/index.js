@@ -9,7 +9,7 @@ class Demo {
 
   demoStart() {
     const countdown = new KKCountdown({
-      textAfterCount: '---',
+      textAfterCount: '',
       oneDayClass: 'kk-test',
       displayDays: true,
       displayZeroDays: true,

@@ -1,8 +1,8 @@
 # KKCountdown - v2.0.0-Alpha (please don't use in production)
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+[![npm package](https://img.shields.io/npm/v/kkcountdown.png?style=flat-square)](https://www.npmjs.org/package/kkcountdown)
+[![Travis](https://travis-ci.org/KrzysiekF/kkcountdown.svg?style=flat-square)](https://travis-ci.org/KrzysiekF/kkcountdown)
+[![Coverage Status](https://coveralls.io/repos/github/KrzysiekF/kkcountdown/badge.svg?branch=master&style=flat-square)](https://coveralls.io/github/KrzysiekF/kkcountdown?branch=master)
 
 KK Countdown counts down to specific dates in the future.
 
@@ -31,35 +31,35 @@ Options
 
 | option      | default         | description |
 |-------------|-----------------|-------------|
-| `textAfterCount`      | `'---'` (`string`) |             |
-| `oneDayClass`      | `''` (`string`) |             |
-| `displayDays`      | `true` (`bool`) |             |
-| `displayZeroDays`      | `true` (`bool`) |             |
-| `customClass`      | `''` (`string`) |             |
-| `warnSeconds`      | `60` (`number`) |             |
-| `warnClass`      | `''` (`string`) |             |
+| `textAfterCount`      | `''` (`string`) ||
+| `oneDayClass`      | `''` (`string`) ||
+| `displayDays`      | `true` (`bool`) ||
+| `displayZeroDays`      | `true` (`bool`) ||
+| `customClass`      | `''` (`string`) ||
+| `warnSeconds`      | `60` (`number`) ||
+| `warnClass`      | `''` (`string`) ||
 ||||
-| `afterFinish`      | (`function`) |             |
+| `afterFinish`      | (`function`) ||
 ||||
-| `dayText`      | `day ` (`string`) |             |
-| `daysText`      | `days ` (`string`) |             |
-| `hourText`      | `hour ` (`string`) |             |
-| `hoursText`      | `hours ` (`string`) |             |
-| `minuteText`      | `:` (`string`) |             |
-| `minutesText`      | `:` (`string`) |             |
-| `secondText`      | `''` (`string`) |             |
-| `secondsText`      | `''` (`string`) |             |
+| `dayText`      | `day ` (`string`) ||
+| `daysText`      | `days ` (`string`) ||
+| `hourText`      | `hour ` (`string`) ||
+| `hoursText`      | `hours ` (`string`) ||
+| `minuteText`      | `:` (`string`) ||
+| `minutesText`      | `:` (`string`) ||
+| `secondText`      | `''` (`string`) ||
+| `secondsText`      | `''` (`string`) ||
 ||||
-| `containerClass`      | `kkcd-container` (`string`) |             |
-| `secondsClass`      | `kkcd-seconds` (`string`) |             |
-| `minutesClass`      | `kkcd-minutes` (`string`) |             |
-| `hoursClass`      | `kkcd-hours` (`string`) |             |
-| `daysClass`      | `kkcd-days` (`string`) |             |
+| `containerClass`      | `kkcd-container` (`string`) ||
+| `secondsClass`      | `kkcd-seconds` (`string`) ||
+| `minutesClass`      | `kkcd-minutes` (`string`) ||
+| `hoursClass`      | `kkcd-hours` (`string`) ||
+| `daysClass`      | `kkcd-days` (`string`) ||
 ||||
-| `secondsTextClass`      | `kkcd-seconds-text` (`string`) |             |
-| `minutesTextClass`      | `kkcd-minutes-text` (`string`) |             |
-| `hoursTextClass`      | `kkcd-hours-text` (`string`) |             |
-| `daysTextClass`      | `kkcd-days-text` (`string`) |             |
+| `secondsTextClass`      | `kkcd-seconds-text` (`string`) ||
+| `minutesTextClass`      | `kkcd-minutes-text` (`string`) ||
+| `hoursTextClass`      | `kkcd-hours-text` (`string`) ||
+| `daysTextClass`      | `kkcd-days-text` (`string`) ||
 
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
