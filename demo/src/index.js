@@ -8,9 +8,18 @@ class Demo {
   }
 
   demoStart() {
-    const countdown = new KKCountdown({ test: 'test' });
+    const countdown = new KKCountdown({
+      textAfterCount: '---',
+      oneDayClass: 'kk-test',
+      displayDays: true,
+      displayZeroDays: true,
+      customClass: 'kk-custom',
+      afterFinish: () => { alert('OK :)'); },
+      warnSeconds: 60,
+      warnClass: 'kk-warn',
+    });
     countdown.container = document.getElementById('app-1');
-    countdown.countTo = '2017-08-14T14:33:00.00';
+    countdown.countTo = '2017-08-16T08:39:00.00';
     countdown.start();
 
     document.getElementById('app-1-start').addEventListener('click', () => {

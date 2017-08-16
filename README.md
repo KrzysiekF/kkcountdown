@@ -32,6 +32,14 @@ Options
 | option      | default         | description |
 |-------------|-----------------|-------------|
 | `textAfterCount`      | `'---'` (`string`) |             |
+| `oneDayClass`      | `''` (`string`) |             |
+| `displayDays`      | `true` (`bool`) |             |
+| `displayZeroDays`      | `true` (`bool`) |             |
+| `customClass`      | `''` (`string`) |             |
+| `warnSeconds`      | `60` (`number`) |             |
+| `warnClass`      | `''` (`string`) |             |
+||||
+| `afterFinish`      | (`function`) |             |
 ||||
 | `dayText`      | `day ` (`string`) |             |
 | `daysText`      | `days ` (`string`) |             |

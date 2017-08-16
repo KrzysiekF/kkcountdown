@@ -10,13 +10,13 @@ class KKCountdown {
     secondsText: '',
 
     textAfterCount: '---',
-    oneDayClass: false, //TODO: obsłużyć
-    displayDays: true, //TODO: obsłużyć
-    displayZeroDays: true, //TODO: obsłużyć
-    customClass: false, //TODO: obsłużyć - dodatkowe klasy na kontener
-    callback: false, //TODO: obsłużyć
-    warnSeconds: 60, //TODO: obsłużyć
-    warnClass: false, //TODO: obsłużyć
+    oneDayClass: '',
+    displayDays: true,
+    displayZeroDays: true,
+    customClass: '',
+    afterFinish: false,
+    warnSeconds: 60,
+    warnClass: '',
 
     containerClass: 'kkcd-container',
     secondsClass: 'kkcd-seconds',
@@ -60,7 +60,7 @@ class KKCountdown {
   }
 
   setOptions(options) {
-    this.options = Object.assign({}, options, this.defaults);
+    this.options = Object.assign({}, this.defaults, options);
     console.log('=> options: ', this.options);
   }
 
@@ -85,6 +85,7 @@ class KKCountdown {
 
     if (count <= 0) {
       this.finish();
+      this.options.afterFinish.call(this);
       return false;
     }
 
@@ -97,14 +98,36 @@ class KKCountdown {
     this.days = count;
 
     this.container.innerHTML = this.prepareCountdownString();
+
+    return this;
   }
 
   formatText(number, text) {
     return number > 1 ? this.options[`${text}sText`] : this.options[`${text}Text`];
   }
 
+  checkLastMoment() {
+    return parseInt(this.days, 10) === 0 && parseInt(this.hours, 10) === 0 && parseInt(this.minutes, 10) === 0;
+  }
+
   prepareCountdownString() {
-    const { containerClass, secondsClass, minutesClass, hoursClass, daysClass, secondsTextClass, minutesTextClass, hoursTextClass, daysTextClass } = this.options;
+    const {
+      containerClass,
+      secondsClass,
+      minutesClass,
+      hoursClass,
+      daysClass,
+      secondsTextClass,
+      minutesTextClass,
+      hoursTextClass,
+      daysTextClass,
+      oneDayClass,
+      displayDays,
+      displayZeroDays,
+      customClass,
+      warnSeconds,
+      warnClass,
+    } = this.options;
 
     const secondsText = `<span class="${secondsTextClass}">${this.formatText(this.seconds, 'second')}</span>`;
     const seconds = `<span class="${secondsClass}">${this.seconds}${secondsText}</span>`;
@@ -118,7 +141,16 @@ class KKCountdown {
     const daysText = `<span class="${daysTextClass}">${this.formatText(this.days, 'day')}</span>`;
     const days = `<span class="${daysClass}">${this.days}${daysText}</span>`;
 
-    return `<span class="${containerClass}">${days}${hours}${minutes}${seconds}</span>`;
+    return `
+      <span class="
+        ${containerClass} 
+        ${oneDayClass && this.days < 1 ? oneDayClass : ''} 
+        ${customClass} 
+        ${(warnSeconds && this.checkLastMoment() && this.seconds <= warnSeconds) ? warnClass : ''}
+      ">
+        ${displayDays ? (!displayZeroDays && this.days === 0) ? '' : days : ''}${hours}${minutes}${seconds}
+      </span>
+    `;
   }
 
   prepareFinishString() {
@@ -128,7 +160,7 @@ class KKCountdown {
   }
 
   fixNumber(number) {
-    return number >= 10 ? (number) : ('0' + number);
+    return number >= 10 ? (number) : (`0${number}`);
   }
 }
 
