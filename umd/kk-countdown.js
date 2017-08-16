@@ -1,5 +1,5 @@
 /*!
- * kkcountdown v1.0.0
+ * kk-countdown v2.0.0
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -90,6 +90,8 @@ module.exports = __webpack_require__(1);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -135,7 +137,7 @@ var KKCountdown = function () {
       displayDays: true,
       displayZeroDays: true,
       customClass: '',
-      afterFinish: false,
+      afterFinish: function afterFinish() {},
       warnSeconds: 60,
       warnClass: '',
 
@@ -174,15 +176,47 @@ var KKCountdown = function () {
   KKCountdown.prototype.start = function start() {
     var _this = this;
 
-    this.countdown();
-    this.loop = setInterval(function () {
-      _this.countdown();
-    }, 1000);
+    var countdownType = _typeof(this.countTo);
+
+    console.log('-> this.countTo: ', countdownType);
+
+    switch (countdownType) {
+      case 'number':
+        console.log('===> GO NUMBER');
+        this.seconds = this.countTo;
+        this.countdownNumber();
+        this.loop = setInterval(function () {
+          _this.countdownNumber();
+        }, 1000);
+        break;
+
+      default:
+        this.countdown();
+        this.loop = setInterval(function () {
+          _this.countdown();
+        }, 1000);
+        break;
+    }
+
+    console.log('================');
   };
 
   KKCountdown.prototype.finish = function finish() {
     this.stop();
     this.container.innerHTML = this.prepareFinishString();
+    this.options.afterFinish.call(this);
+  };
+
+  KKCountdown.prototype.countdownNumber = function countdownNumber() {
+    this.seconds -= 1;
+    this.container.innerHTML = this.prepareCoundownNumberString();
+
+    if (this.seconds <= 0) {
+      this.finish();
+      return false;
+    }
+
+    return this;
   };
 
   KKCountdown.prototype.countdown = function countdown() {
@@ -192,7 +226,6 @@ var KKCountdown = function () {
 
     if (count <= 0) {
       this.finish();
-      this.options.afterFinish.call(this);
       return false;
     }
 
@@ -251,10 +284,24 @@ var KKCountdown = function () {
     return '\n      <span class="\n        ' + containerClass + ' \n        ' + (oneDayClass && this.days < 1 ? oneDayClass : '') + ' \n        ' + customClass + ' \n        ' + (warnSeconds && this.checkLastMoment() && this.seconds <= warnSeconds ? warnClass : '') + '\n      ">\n        ' + (displayDays ? !displayZeroDays && this.days === 0 ? '' : days : '') + hours + minutes + seconds + '\n      </span>\n    ';
   };
 
-  KKCountdown.prototype.prepareFinishString = function prepareFinishString() {
+  KKCountdown.prototype.prepareCoundownNumberString = function prepareCoundownNumberString() {
     var _options2 = this.options,
+        secondsClass = _options2.secondsClass,
         containerClass = _options2.containerClass,
-        textAfterCount = _options2.textAfterCount;
+        customClass = _options2.customClass,
+        warnSeconds = _options2.warnSeconds,
+        warnClass = _options2.warnClass;
+
+
+    var seconds = '<span class="' + secondsClass + '">' + this.seconds + '</span>';
+
+    return '\n      <span class="\n        ' + containerClass + '\n        ' + customClass + ' \n        ' + (warnSeconds && this.checkLastMoment() && this.seconds <= warnSeconds ? warnClass : '') + '\n      ">\n        ' + seconds + '\n      </span>\n    ';
+  };
+
+  KKCountdown.prototype.prepareFinishString = function prepareFinishString() {
+    var _options3 = this.options,
+        containerClass = _options3.containerClass,
+        textAfterCount = _options3.textAfterCount;
 
 
     return '<span class="' + containerClass + '">' + textAfterCount + '</span>';

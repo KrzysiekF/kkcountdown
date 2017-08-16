@@ -26,6 +26,12 @@ countdown.countTo = '2017-12-12T14:33:00.00';
 countdown.start();
 ```
 
+`container` - HTML element where coutdown should be placed
+
+`countTo` - You can set here: 
+- date (`string` in ISO date format or `Date object`)
+- number (`number`) of seconds to countdown
+
 Options
 -------
 

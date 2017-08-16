@@ -14,7 +14,7 @@ class KKCountdown {
     displayDays: true,
     displayZeroDays: true,
     customClass: '',
-    afterFinish: false,
+    afterFinish: () => {},
     warnSeconds: 60,
     warnClass: '',
 
@@ -69,13 +69,43 @@ class KKCountdown {
   }
 
   start() {
-    this.countdown();
-    this.loop = setInterval(() => { this.countdown(); }, 1000);
+    const countdownType = typeof this.countTo;
+
+    console.log('-> this.countTo: ', countdownType);
+
+    switch (countdownType) {
+      case 'number':
+        console.log('===> GO NUMBER');
+        this.seconds = this.countTo;
+        this.countdownNumber();
+        this.loop = setInterval(() => { this.countdownNumber(); }, 1000);
+        break;
+
+      default:
+        this.countdown();
+        this.loop = setInterval(() => { this.countdown(); }, 1000);
+        break;
+    }
+
+    console.log('================');
   }
 
   finish() {
     this.stop();
     this.container.innerHTML = this.prepareFinishString();
+    this.options.afterFinish.call(this);
+  }
+
+  countdownNumber() {
+    this.seconds -= 1;
+    this.container.innerHTML = this.prepareCoundownNumberString();
+
+    if (this.seconds <= 0) {
+      this.finish();
+      return false;
+    }
+
+    return this;
   }
 
   countdown() {
@@ -85,7 +115,6 @@ class KKCountdown {
 
     if (count <= 0) {
       this.finish();
-      this.options.afterFinish.call(this);
       return false;
     }
 
@@ -107,7 +136,9 @@ class KKCountdown {
   }
 
   checkLastMoment() {
-    return parseInt(this.days, 10) === 0 && parseInt(this.hours, 10) === 0 && parseInt(this.minutes, 10) === 0;
+    return parseInt(this.days, 10) === 0 &&
+      parseInt(this.hours, 10) === 0 &&
+      parseInt(this.minutes, 10) === 0;
   }
 
   prepareCountdownString() {
@@ -149,6 +180,28 @@ class KKCountdown {
         ${(warnSeconds && this.checkLastMoment() && this.seconds <= warnSeconds) ? warnClass : ''}
       ">
         ${displayDays ? (!displayZeroDays && this.days === 0) ? '' : days : ''}${hours}${minutes}${seconds}
+      </span>
+    `;
+  }
+
+  prepareCoundownNumberString() {
+    const {
+      secondsClass,
+      containerClass,
+      customClass,
+      warnSeconds,
+      warnClass,
+    } = this.options;
+
+    const seconds = `<span class="${secondsClass}">${this.seconds}</span>`;
+
+    return `
+      <span class="
+        ${containerClass}
+        ${customClass} 
+        ${(warnSeconds && this.checkLastMoment() && this.seconds <= warnSeconds) ? warnClass : ''}
+      ">
+        ${seconds}
       </span>
     `;
   }
