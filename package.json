@@ -2,8 +2,24 @@
   "name": "kk-countdown",
   "version": "2.0.0",
   "description": "Plugin KK Countdown counts down to specific dates in the future.",
+  "author": "Krzysztof Furtak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KrzysiekF/kkcountdown/issues"
+  },
+  "homepage": "https://github.com/KrzysiekF/kkcountdown#readme",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrzysiekF/kkcountdown.git"
+  },
+  "keywords": [
+    "countdown",
+    "kk-countdown",
+    "javascript",
+    "es6"
+  ],
   "files": [
     "es",
     "lib",
@@ -27,9 +43,5 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.1",
     "nwb": "0.18.x"
-  },
-  "author": "",
-  "homepage": "",
-  "license": "MIT",
-  "repository": ""
+  }
 }
