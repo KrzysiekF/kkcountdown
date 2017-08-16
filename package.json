@@ -43,5 +43,9 @@
     "eslint-plugin-jsx-a11y": "^5.0.1",
     "eslint-plugin-react": "^7.0.1",
     "nwb": "0.18.x"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
   }
 }
