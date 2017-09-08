@@ -1,4 +1,4 @@
-# KKCountdown - v2.0.0-Alpha (please don't use in production)
+# KKCountdown
 
 [![npm package](https://img.shields.io/npm/v/kk-countdown.png?style=flat-square)](https://www.npmjs.org/package/kk-countdown)
 [![Travis](https://travis-ci.org/KrzysiekF/kkcountdown.svg?style=flat-square)](https://travis-ci.org/KrzysiekF/kkcountdown)
