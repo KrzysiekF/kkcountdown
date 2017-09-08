@@ -1,5 +1,5 @@
 /*!
- * kk-countdown v2.0.0
+ * kk-countdown v2.0.2 - https://github.com/KrzysiekF/kkcountdown#readme
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {

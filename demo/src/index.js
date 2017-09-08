@@ -19,7 +19,7 @@ class Demo {
       warnClass: 'kk-warn',
     });
     countdown.container = document.getElementById('app-1');
-    countdown.countTo = '2017-08-17T08:39:00.00';
+    countdown.countTo = '2017-09-17T08:39:00.00';
     countdown.start();
 
     document.getElementById('app-1-start').addEventListener('click', () => {
@@ -32,7 +32,7 @@ class Demo {
 
     const countdown1 = new KKCountdown();
     countdown1.container = document.getElementById('app-2');
-    countdown1.countTo = '2017-08-26T15:45:12.00';
+    countdown1.countTo = '2017-09-26T15:45:12.00';
     countdown1.start();
 
     const countdown2 = new KKCountdown({
@@ -49,7 +49,7 @@ class Demo {
 
     const countdown3 = new KKCountdown();
     countdown3.container = document.getElementById('app-4');
-    countdown3.countTo = new Date('2017-08-26T15:45:12.00');
+    countdown3.countTo = new Date('2017-09-26T15:45:12.00');
     countdown3.start();
   }
 }
