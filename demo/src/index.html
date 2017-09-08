@@ -1,27 +1,263 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>kkcountdown-demo</title>
     <meta name="description" content="">
     <style>
-      .kk-warn {
-        color: #b90000;
-      }
+        .kk-warn {
+            color: #b90000;
+        }
     </style>
-  </head>
-  <body>
-    <hr>
-    DEMO 1: <span id="app-1"></span>
-    <button id="app-1-start">Start</button> <button id="app-1-stop">Stop</button>
-    <hr>
-    DEMO 2: <span id="app-2"></span>
-    <hr>
-    DEMO 3: <span id="app-3"></span>
-    <hr>
-    DEMO 4: <span id="app-4"></span>
-    <hr>
-  </body>
+</head>
+<body>
+
+<div class="content">
+    <h1 class="logo">KK Countdown</h1>
+    <section>
+        <h2>Installation / Download</h2>
+        <h3>NPM</h3>
+        <pre class="language-bash"><code class="language-bash">npm install --save kk-countdown</code></pre>
+    </section>
+    <section><h2>Examples</h2>
+        <h3>Simple</h3>
+        <div class="grid">
+            <div class="col-4">
+                <span id="app-2"></span>
+            </div>
+            <div class="col-8">
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+const countdown = new KKCountdown();
+countdown.container = document.getElementById('app-2');
+countdown.countTo = '2018-12-01T12:00:00.00';
+countdown.start();
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <h3>Contdown control</h3>
+        <div class="grid">
+            <div class="col-4">
+                <span id="app-1"></span>
+
+                <button id="app-1-start">Start</button>
+                <button id="app-1-stop">Stop</button>
+            </div>
+            <div class="col-8">
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+const countdown = new KKCountdown({
+  textAfterCount: '',
+  oneDayClass: 'kk-test',
+  displayDays: true,
+  displayZeroDays: true,
+  customClass: 'kk-custom',
+  afterFinish: () => {},
+  warnSeconds: 60,
+  warnClass: 'kk-warn',
+});
+countdown.container = document.getElementById('app-1');
+countdown.countTo = moment().add(10, 'd');
+countdown.start();
+
+document.getElementById('app-1-start').addEventListener('click', () => {
+  countdown.start();
+});
+
+document.getElementById('app-1-stop').addEventListener('click', () => {
+  countdown.stop();
+});
+                    </code>
+                </pre>
+            </div>
+        </div>
+
+        <h3>Countdown</h3>
+        <div class="grid">
+            <div class="col-4">
+                <span id="app-3"></span>
+            </div>
+            <div class="col-8">
+                <pre class="language-javascript">
+                    <code class="language-javascript">
+const countdown = new KKCountdown({
+  textAfterCount: '',
+  afterFinish: () => { console.log('===> FINISH!!!'); },
+  warnSeconds: 60,
+});
+countdown.container = document.getElementById('app-3');
+countdown.countTo = 65;
+countdown.start();
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>Options</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>option</th>
+                <th>default</th>
+                <th>description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><code>textAfterCount</code></td>
+                <td><code>''</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>oneDayClass</code></td>
+                <td><code>''</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>displayDays</code></td>
+                <td><code>true</code> (<code>bool</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>displayZeroDays</code></td>
+                <td><code>true</code> (<code>bool</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>customClass</code></td>
+                <td><code>''</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>warnSeconds</code></td>
+                <td><code>60</code> (<code>number</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>warnClass</code></td>
+                <td><code>''</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>afterFinish</code></td>
+                <td>(<code>function</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>dayText</code></td>
+                <td><code>day</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>daysText</code></td>
+                <td><code>days</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>hourText</code></td>
+                <td><code>hour</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>hoursText</code></td>
+                <td><code>hours</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>minuteText</code></td>
+                <td><code>:</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>minutesText</code></td>
+                <td><code>:</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>secondText</code></td>
+                <td><code>''</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>secondsText</code></td>
+                <td><code>''</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>containerClass</code></td>
+                <td><code>kkcd-container</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>secondsClass</code></td>
+                <td><code>kkcd-seconds</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>minutesClass</code></td>
+                <td><code>kkcd-minutes</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>hoursClass</code></td>
+                <td><code>kkcd-hours</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>daysClass</code></td>
+                <td><code>kkcd-days</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>secondsTextClass</code></td>
+                <td><code>kkcd-seconds-text</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>minutesTextClass</code></td>
+                <td><code>kkcd-minutes-text</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>hoursTextClass</code></td>
+                <td><code>kkcd-hours-text</code> (<code>string</code>)</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><code>daysTextClass</code></td>
+                <td><code>kkcd-days-text</code> (<code>string</code>)</td>
+                <td></td>
+            </tr></tbody></table>
+    </section>
+    <footer>
+        <a href="http://krzysztof-furtak.pl" target="_blank">
+        Krzysztof Furtak</a> © copyright 2017
+    </footer>
+</div>
+</body>
 </html>

@@ -8,7 +8,11 @@
     "clean": "nwb clean-app",
     "start": "nwb serve-web-app --reload --port=9000"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gridlex": "^2.4.1",
+    "moment": "^2.18.1",
+    "normalize.css": "^7.0.0"
+  },
   "devDependencies": {
     "nwb": "0.18.x",
     "prismjs": "^1.6.0"
